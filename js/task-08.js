@@ -3,14 +3,31 @@ const render = document.querySelector('button[data-action="render"]')
 const destroy = document.querySelector('button[data-action="destroy"]')
 const inputScreenAmountDiv = document.querySelector('input')
 
-const newDiv = () => {
-const div = document.createElement('div')
-div.style.backgroundColor = '#' + Math.random().toString(16).substring(4)
-div.setAttribute('width', '30')
-div.setAttribute('height', '30')
+// const newDiv = (event) => {
+//   const number = event.currentTarget.value
+//   let divv = document.createElement('div')
+//   divv.setAttribute('width', '30')
+//   divv.setAttribute('height', '30')
 
-boxCreateDiv.appendChild(div)
-console.log(boxCreateDiv)
+//   const array = []
+
+//   for(let i = 0; i < number; i+=1){
+//   array.unshift(divv)
+//   }
+
+//   console.log(array)
+
+//   array.forEach(el => boxCreateDiv.appendChild(el))
+
+//   console.log(boxCreateDiv)
+//   }
+//   inputScreenAmountDiv.addEventListener('input', newDiv)
+
+
+
+const rendering = () => {
+
+console.dir(inputScreenAmountDiv)
+
 }
-
-render.addEventListener('click', newDiv)
+render.addEventListener('click', rendering)
