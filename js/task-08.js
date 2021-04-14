@@ -8,25 +8,30 @@ let number = 0
 const newDiv = (event) => {
  number  = event.currentTarget.value
   }
-inputScreenAmountDiv.addEventListener('input', newDiv)
-
 const rendering = () => {
-  console.log(number)
-  for(let i = 0; i < number; i++){
-    divv = document.createElement('div')
-    divv.setAttribute('width', '30')
-    divv.setAttribute('height', '30')
-    console.log(boxCreateDiv.appendChild(divv))
-  }
-}
-render.addEventListener('click', rendering)
-
-const deleteDiv = () => {
-  for(let i = 0; i < number; i++){
-    boxCreateDiv.removeChild(divv)
-   console.log(boxCreateDiv)
+  const r = Math.floor(Math.random() * (255))
+const g = Math.floor(Math.random() * (255))
+const b = Math.floor(Math.random() * (255))
+const rgb = `${r}, ${g}, ${b}`
+console.log(rgb)
+  let items = [];
+  for (let i = 0; i < number; i++) {
+  let divv = document.createElement('div');
+  divv.style.width = 30 + 'px';
+  divv.style.height = 30 + 'px';
+  divv.style.backgroundColor = `rgb(${rgb})`
+  items.push(divv);
   }
 
-}
+  boxCreateDiv.append(...items);
+  };
 
-destroy.addEventListener('click', deleteDiv)
+  const deleteDiv = () => {
+  boxCreateDiv.innerHTML = '';
+  inputScreenAmountDiv.value = 0;
+  };
+
+  render.addEventListener('click', rendering);
+  inputScreenAmountDiv.addEventListener('input', newDiv);
+  destroy.addEventListener('click', deleteDiv);
+
