@@ -16,7 +16,7 @@ const images = [
   },
 ];
 const listImages = document.querySelector('#gallery')
-images.forEach(img => {
+const image = images.map(img => {
 
   const elemetnList = document.createElement('li')
   elemetnList.classList.add('list')
@@ -24,6 +24,8 @@ images.forEach(img => {
   listImg.src = img.url
   listImg.alt = img.alt
   listImg.classList.add('image')
-  elemetnList.appendChild(listImg)
-  listImages.appendChild(elemetnList)
+   elemetnList.appendChild(listImg)
+   return elemetnList
 })
+listImages.append(...image)
+

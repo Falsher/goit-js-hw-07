@@ -14,4 +14,4 @@ const ingreds = document.querySelector('#ingredients')
                        el.textContent = element;
                        return el;
                      });
-document.body.append(...list);
+ingreds.append(...list);
