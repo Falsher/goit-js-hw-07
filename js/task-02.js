@@ -7,7 +7,7 @@ const ingredients = [
   'Приправы',
 ];
 const ingreds = document.querySelector('#ingredients')
-const listIngredients = []
+
 
          const list = ingredients.map(function(element){
                        const el = document.createElement('li');
