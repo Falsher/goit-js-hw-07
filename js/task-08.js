@@ -8,17 +8,18 @@ let number = 0
 const newDiv = (event) => {
  number  = event.currentTarget.value
   }
+  let a = 10
 const rendering = () => {
   const r = Math.floor(Math.random() * (255))
 const g = Math.floor(Math.random() * (255))
 const b = Math.floor(Math.random() * (255))
 const rgb = `${r}, ${g}, ${b}`
-console.log(rgb)
   let items = [];
   for (let i = 0; i < number; i++) {
   let divv = document.createElement('div');
-  divv.style.width = 30 + 'px';
-  divv.style.height = 30 + 'px';
+   a += 10
+  divv.style.width = a + 'px';
+    divv.style.height = a + 'px';
   divv.style.backgroundColor = `rgb(${rgb})`
   items.push(divv);
   }
@@ -29,6 +30,8 @@ console.log(rgb)
   const deleteDiv = () => {
   boxCreateDiv.innerHTML = '';
   inputScreenAmountDiv.value = 0;
+  number = 0;
+  // обнуляю number так как если его не обнулить в памяти сохраняется полученное от фукции newDiv значение
   };
 
   render.addEventListener('click', rendering);
